@@ -1,0 +1,22 @@
+version: "3"
+services:
+  product-app:
+    image: cmabdullah21/spring-boot-docker-v03
+    ports:
+      - "8080:8080"
+    networks:
+      - common-mysql
+    depends_on:
+      - mysqldb
+
+  mysqldb:
+    image: mysql:8
+    networks:
+      - common-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=productdb
+
+networks:
+  common-mysql:
+# docker container run --network common-mysql --name product-app-v1-container-v3  -p 127.0.0.1:8080:8080 -d cmabdullah21/spring-boot-docker-v03
