@@ -1,0 +1,26 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'//  apply false
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+archivesBaseName='springboot-docker-example-1'
+group = 'com.cm'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+//apply plugin: 'org.springframework.boot'
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
