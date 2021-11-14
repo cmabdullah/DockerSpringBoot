@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
     - name: client
-      image: cmabdullah21/spring-boot-docker-v06
+      image: cmabdullah21/spring-boot-docker-v05
       ports:
         - containerPort: 8080

@@ -40,6 +40,13 @@ curl --location --request POST 'http://localhost:8080/api/v1/product/save' \
 * get info
 - kubectl get pods
 
++ deployment
+ - kubectl apply -f client-deployment.yaml
+ - kubectl get deployments
+  
+get details 
++ kubectl get pods -o wide
+
 * pod log check
 - kubectl logs client-pod  --previous --tail 10
 
@@ -63,4 +70,13 @@ https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-
 - docker build -t cmabdullah21/spring-boot-docker-v04 --progress=plain .
 - docker push cmabdullah21/spring-boot-docker-v05
 
+update pod image from cluster
+
+> kubctl set image client-deployment client=cmabdullah21/spring-boot-docker-v01:version-tag
+
+eval $(minikube docker-env)
+
+
+remove cache
+docker system prune -a
 

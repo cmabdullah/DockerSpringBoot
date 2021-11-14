@@ -19,7 +19,10 @@ public class ProductController {
 	@GetMapping("/add")
 	public ResponseEntity<String> add(
 			@RequestParam String a1, @RequestParam String a2) {
-		//http://localhost:8080//api/v1/product//add?a1=cm&a2=abdullah
+		//http://localhost:8080/api/v1/product/add?a1=dhaka&a2=city
+		//http://localhost:8080/api/v1/product/add?a1=khulna&a2=city
+		//http://localhost:8080/api/v1/product/add?a1=Chittagong&a2=city
+		//http://localhost:8080/api/v1/product/add?a1=sylet&a2=city
 
 		String response = "";
 
@@ -27,7 +30,7 @@ public class ProductController {
 
 		log.info("Pram 2 "+a2+ " requestId "+ requestId);
 
-		if (a2.contains("abdullah")) {
+		if (a2.contains("dhaka")) {
 			Callable<String> callable = () -> {
 				// Perform some computation
 				Thread.sleep(30000);
@@ -39,7 +42,7 @@ public class ProductController {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (a2.contains("mrkhan")) {
+		} else if (a2.contains("khulna")) {
 			Callable<String> callable = () -> {
 				// Perform some computation
 				Thread.sleep(60000);
@@ -54,7 +57,7 @@ public class ProductController {
 		}
 
 		else {
-			response = a1+ a2;
+			response = a1 +" "+ a2;
 		}
 		log.info("response "+response+ " requestId "+ requestId);
 		return ResponseEntity.ok(response);
