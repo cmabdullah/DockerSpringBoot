@@ -70,6 +70,7 @@ https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-
 - docker build -t cmabdullah21/spring-boot-docker-v04 --progress=plain .
 - docker push cmabdullah21/spring-boot-docker-v05
 
+lecture 214
 update pod image from cluster
 
 > kubctl set image client-deployment client=cmabdullah21/spring-boot-docker-v01:version-tag
